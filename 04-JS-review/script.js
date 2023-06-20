@@ -189,9 +189,17 @@ const updatedBook = {
 };
 updatedBook;
 
-const summary = `${title}, a ${pages}-pages long book, was written by ${author} and published in  ${
-  publicationDate.split("-")[0]
-}. The book has ${hasMoviesAdaptation ? "" : "not"} been adapted as a movie`;
+//arrow function
+// function getYear(str) {
+//   return str.split("-")[0];
+// }
+// const getYear = (str) => str.split("-")[0];
+
+const getYear = (str) => str.split("-")[0];
+
+const summary = `${title}, a ${pages}-pages long book, was written by ${author} and published in  ${getYear(
+  publicationDate
+)}. The book has ${hasMoviesAdaptation ? "" : "not"} been adapted as a movie`;
 summary;
 
 //ternary operator
