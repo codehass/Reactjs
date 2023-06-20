@@ -144,7 +144,7 @@ function getBook(id) {
 }
 
 //Destructuring
-const book = getBook(2);
+const book = getBook(3);
 
 // const title = book.title;
 // const author = book.author;
@@ -227,11 +227,22 @@ console.log(book.translations.spanish);
 const spanishTranslation = book.translations.spanish || "No translation";
 spanishTranslation;
 
-console.log(book.reviews.librarything.reviewsCount);
-const countWrong = book.reviews.librarything.reviewsCount || "No data";
-countWrong;
+//console.log(book.reviews.librarything.reviewsCount);
+//const countWrong = book.reviews.librarything.reviewsCount || "No data";
+//countWrong;
 
 //Nullish coalescing operator
 // ?? operator returns the first defined value or the last value if all are undefined or null
-const count = book.reviews.librarything.reviewsCount ?? "No data";
-count;
+//const count = book.reviews.librarything.reviewsCount ?? "No data";
+//count;
+
+//Optional chaining operator
+
+function getTotalReviewCount(book) {
+  const goodReads = book.reviews.goodreads.reviewsCount;
+  //In the case of id:3 there is no librarything property so we get an error if we try to access it directly as above so we use optional chaining operator
+  const libraryThing = book.reviews.librarything?.reviewsCount ?? 0;
+  return goodReads + libraryThing;
+}
+
+console.log(getTotalReviewCount(book));
