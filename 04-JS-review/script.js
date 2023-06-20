@@ -144,7 +144,7 @@ function getBook(id) {
 }
 
 //Destructuring
-const book = getBook(1);
+const book = getBook(2);
 
 // const title = book.title;
 // const author = book.author;
@@ -157,7 +157,7 @@ const {
   pages,
   publications,
   genres,
-  hasMoviesAdaptation,
+  hasMovieAdaptation,
   publicationDate,
 } = book;
 
@@ -199,7 +199,7 @@ const getYear = (str) => str.split("-")[0];
 
 const summary = `${title}, a ${pages}-pages long book, was written by ${author} and published in  ${getYear(
   publicationDate
-)}. The book has ${hasMoviesAdaptation ? "" : "not"} been adapted as a movie`;
+)}. The book has ${hasMovieAdaptation ? "" : "not"} been adapted as a movie`;
 summary;
 
 //ternary operator
@@ -207,3 +207,31 @@ const pagesRange = pages > 1000 ? "over a thousand" : "less than 1000";
 pagesRange;
 
 console.log(`The book has ${pagesRange} pages.`);
+
+//short-circuiting
+// && operator returns the first falsy value or the last value if all are truthy
+console.log(true && "some string");
+console.log(false && "some string");
+console.log(hasMovieAdaptation && "This book has a movie");
+
+//falsy:[ 0, '', null, undefined? false]
+console.log("jonas" && "Some string");
+console.log(0 && "Some string");
+
+// || operator returns the first truthy value or the last value if all are falsy
+console.log(true || "some string");
+console.log(false || "some string");
+
+console.log(book.translations.spanish);
+
+const spanishTranslation = book.translations.spanish || "No translation";
+spanishTranslation;
+
+console.log(book.reviews.librarything.reviewsCount);
+const countWrong = book.reviews.librarything.reviewsCount || "No data";
+countWrong;
+
+//Nullish coalescing operator
+// ?? operator returns the first defined value or the last value if all are undefined or null
+const count = book.reviews.librarything.reviewsCount ?? "No data";
+count;
