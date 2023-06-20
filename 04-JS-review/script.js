@@ -142,7 +142,7 @@ function getBooks() {
 function getBook(id) {
   return data.find((d) => d.id === id);
 }
-
+/*
 //Destructuring
 const book = getBook(3);
 
@@ -246,3 +246,26 @@ function getTotalReviewCount(book) {
 }
 
 console.log(getTotalReviewCount(book));
+*/
+//Array methods
+function getTotalReviewCount(book) {
+  const goodReads = book.reviews.goodreads.reviewsCount;
+  //In the case of id:3 there is no librarything property so we get an error if we try to access it directly as above so we use optional chaining operator
+  const libraryThing = book.reviews.librarything?.reviewsCount ?? 0;
+  return goodReads + libraryThing;
+}
+
+const books = getBooks();
+
+const x = [1, 2, 3, 4, 5].map((n) => n * 2);
+console.log(x);
+
+const titles = books.map((book) => book.title);
+titles;
+
+const essentialData = books.map((book) => ({
+  title: book.title,
+  author: book.author,
+  reviewsCount: getTotalReviewCount(book),
+}));
+essentialData;
