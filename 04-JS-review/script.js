@@ -151,8 +151,15 @@ const book = getBook(1);
 
 //Object destructuring
 
-const { title, author, pages, publications, genres, hasMoviesAdaptation } =
-  book;
+const {
+  title,
+  author,
+  pages,
+  publications,
+  genres,
+  hasMoviesAdaptation,
+  publicationDate,
+} = book;
 
 console.log(author, title, genres);
 
@@ -172,5 +179,23 @@ const newGenres = [...genres, "epic fantasy"];
 console.log(newGenres);
 
 //object spread operator
-const updatedBook = { ...book, moviePublicationDte: "2001-12-19" };
+const updatedBook = {
+  ...book,
+  //Adding new property
+  moviePublicationDte: "2001-12-19",
+
+  //Overwriting an existing property
+  pages: 1210,
+};
 updatedBook;
+
+const summary = `${title}, a ${pages}-pages long book, was written by ${author} and published in  ${
+  publicationDate.split("-")[0]
+}. The book has ${hasMoviesAdaptation ? "" : "not"} been adapted as a movie`;
+summary;
+
+//ternary operator
+const pagesRange = pages > 1000 ? "over a thousand" : "less than 1000";
+pagesRange;
+
+console.log(`The book has ${pagesRange} pages.`);
