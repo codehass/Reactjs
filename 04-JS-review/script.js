@@ -248,6 +248,7 @@ function getTotalReviewCount(book) {
 console.log(getTotalReviewCount(book));
 */
 //Array methods
+/*
 function getTotalReviewCount(book) {
   const goodReads = book.reviews.goodreads.reviewsCount;
   //In the case of id:3 there is no librarything property so we get an error if we try to access it directly as above so we use optional chaining operator
@@ -320,3 +321,26 @@ const booksAfterUpdate = booksAfterDelete.map((book) =>
   book.id === 1 ? { ...book, pages: 1210 } : book
 );
 booksAfterUpdate;
+*/
+//Promise:
+//Asynchronous is a programming paradigm in which a process operates independently of other processes
+//In this case we don't know when the data will be available so we use promise to handle this situation and we can use then method to get the data when it is available.
+// fetch("https://jsonplaceholder.typicode.com/todos")
+//   .then((response) => response.json())
+//   .then((data) => console.log(data));
+
+// console.log("Hassan");
+
+//Async/Await
+async function getTodo() {
+  const response = await fetch("https://jsonplaceholder.typicode.com/todos");
+  const data = await response.json();
+  console.log(data);
+
+  return data;
+}
+
+const todo = getTodo();
+console.log(todo);
+
+console.log("Hassan");
