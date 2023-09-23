@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Product from "./pages/Product";
 import Pricing from "./pages/Pricing";
@@ -6,7 +7,10 @@ import PageNotFound from "./pages/PageNotFound";
 import Login from "./pages/Login";
 import AppLayout from "./pages/AppLayout";
 import CityList from "./components/CityList";
-import { useEffect, useState } from "react";
+import CountryList from "./components/countryList";
+
+import { polyfillCountryFlagEmojis } from "country-flag-emoji-polyfill";
+polyfillCountryFlagEmojis();
 
 const BASE_URL = "http://localhost:9000";
 function App() {
@@ -21,7 +25,7 @@ function App() {
         const data = await res.json();
         setCities(data);
       } catch {
-        alert("There was an error");
+        // alert("There was an error");
       } finally {
         setIsLoading(false);
       }
@@ -48,7 +52,7 @@ function App() {
           />
           <Route
             path="countries"
-            element={<p> Hello from countries routes</p>}
+            element={<CountryList cities={cities} isLoading={isLoading} />}
           />
           <Route path="form" element={<p> Hello from form</p>} />
         </Route>
