@@ -9,9 +9,9 @@ import CityList from "./components/CityList";
 import CountryList from "./components/countryList";
 import City from "./components/City";
 import Form from "./components/Form";
+import { CitiesProvider } from "./contexts/CitiesContext";
 
 import { polyfillCountryFlagEmojis } from "country-flag-emoji-polyfill";
-import { CitiesProvider } from "./contexts/CitiesContext";
 polyfillCountryFlagEmojis();
 
 function App() {
