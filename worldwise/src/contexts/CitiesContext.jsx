@@ -9,6 +9,7 @@ function CitiesProvider({ children }) {
   const [isLoading, setIsLoading] = useState(false);
   const [currentCity, setCurrentCity] = useState({});
 
+  // Fetch data from local server
   useEffect(() => {
     async function fetchCities() {
       try {
