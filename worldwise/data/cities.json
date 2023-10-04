@@ -35,6 +35,78 @@
         "lng": 13.376933665713324
       },
       "id": 98443197
+    },
+    {
+      "cityName": "Sabugal",
+      "country": "Portugal",
+      "emoji": "🇵🇹",
+      "date": "2023-10-11T11:47:25.000Z",
+      "notes": "",
+      "position": {
+        "lat": "40.45991168490444",
+        "lng": "-7.053148530686434"
+      },
+      "id": 98443198
+    },
+    {
+      "cityName": "Sale",
+      "country": "Morocco",
+      "emoji": "🇲🇦",
+      "date": "2023-10-04T11:54:40.844Z",
+      "notes": "hi Morocco",
+      "position": {
+        "lat": "33.970808083097936",
+        "lng": "-6.745434088217675"
+      },
+      "id": 98443199
+    },
+    {
+      "cityName": "Sale",
+      "country": "Morocco",
+      "emoji": "🇲🇦",
+      "date": "2023-10-04T11:54:40.844Z",
+      "notes": "hi Morocco",
+      "position": {
+        "lat": "33.970808083097936",
+        "lng": "-6.745434088217675"
+      },
+      "id": 98443200
+    },
+    {
+      "cityName": "Sale",
+      "country": "Morocco",
+      "emoji": "🇲🇦",
+      "date": "2023-10-04T11:54:40.844Z",
+      "notes": "hi Morocco",
+      "position": {
+        "lat": "33.970808083097936",
+        "lng": "-6.745434088217675"
+      },
+      "id": 98443201
+    },
+    {
+      "cityName": "El Robledo",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2023-10-04T12:01:35.586Z",
+      "notes": "",
+      "position": {
+        "lat": "39.22745066882304",
+        "lng": "-4.240583043816347"
+      },
+      "id": 98443202
+    },
+    {
+      "cityName": "El Robledo",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2023-10-04T12:02:59.103Z",
+      "notes": "",
+      "position": {
+        "lat": "39.22745066882304",
+        "lng": "-4.240583043816347"
+      },
+      "id": 98443203
     }
   ]
 }
