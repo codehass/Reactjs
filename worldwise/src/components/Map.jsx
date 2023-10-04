@@ -23,7 +23,7 @@ function Map() {
     getPosition,
   } = useGeolocation();
 
-const {mapLat,mapLng} = useUrlPosition()
+  const [mapLat,mapLng] = useUrlPosition()
 
   useEffect(
     function () {
