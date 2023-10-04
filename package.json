@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "country-flag-emoji-polyfill": "^0.1.4"
+    "country-flag-emoji-polyfill": "^0.1.4",
+    "react-datepicker": "^4.18.0"
   }
 }
