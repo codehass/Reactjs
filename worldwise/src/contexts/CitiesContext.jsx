@@ -40,6 +40,7 @@ function CitiesProvider({ children }) {
     }
   }
 
+  //Add function to create a city
   async function createCity(newCity) {
     try {
       setIsLoading(true);
@@ -60,6 +61,7 @@ function CitiesProvider({ children }) {
     }
   }
 
+  //Add function to delete a city
   async function deleteCity(id) {
     try {
       setIsLoading(true);
