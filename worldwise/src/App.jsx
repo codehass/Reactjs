@@ -10,10 +10,12 @@ import CountryList from "./components/countryList";
 import City from "./components/City";
 import Form from "./components/Form";
 import { CitiesProvider } from "./contexts/CitiesContext";
+import { AuthProvider } from "./contexts/FakeAuthContext";
+import ProtectedRoute from "./pages/ProtectedRoute";
 
 //this function to display flags in the UI
 import { polyfillCountryFlagEmojis } from "country-flag-emoji-polyfill";
-import { AuthProvider } from "./contexts/FakeAuthContext";
+
 polyfillCountryFlagEmojis();
 
 function App() {
@@ -26,7 +28,14 @@ function App() {
 						<Route path="product" element={<Product />} />
 						<Route path="pricing" element={<Pricing />} />
 						<Route path="login" element={<Login />} />
-						<Route path="app" element={<AppLayout />}>
+						<Route
+							path="app"
+							element={
+								<ProtectedRoute>
+									<AppLayout />
+								</ProtectedRoute>
+							}
+						>
 							<Route index element={<Navigate to="cities" />} />
 							<Route path="cities" element={<CityList />} />
 							<Route path="cities/:id" element={<City />} />
