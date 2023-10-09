@@ -13,29 +13,32 @@ import { CitiesProvider } from "./contexts/CitiesContext";
 
 //this function to display flags in the UI
 import { polyfillCountryFlagEmojis } from "country-flag-emoji-polyfill";
+import { AuthProvider } from "./contexts/FakeAuthContext";
 polyfillCountryFlagEmojis();
 
 function App() {
-  return (
-    <CitiesProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="product" element={<Product />} />
-          <Route path="pricing" element={<Pricing />} />
-          <Route path="login" element={<Login />} />
-          <Route path="app" element={<AppLayout />}>
-            <Route index element={<Navigate to="cities" />} />
-            <Route path="cities" element={<CityList />} />
-            <Route path="cities/:id" element={<City />} />
-            <Route path="countries" element={<CountryList />} />
-            <Route path="form" element={<Form />} />
-          </Route>
-          <Route path="*" element={<PageNotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </CitiesProvider>
-  );
+	return (
+		<AuthProvider>
+			<CitiesProvider>
+				<BrowserRouter>
+					<Routes>
+						<Route path="/" element={<HomePage />} />
+						<Route path="product" element={<Product />} />
+						<Route path="pricing" element={<Pricing />} />
+						<Route path="login" element={<Login />} />
+						<Route path="app" element={<AppLayout />}>
+							<Route index element={<Navigate to="cities" />} />
+							<Route path="cities" element={<CityList />} />
+							<Route path="cities/:id" element={<City />} />
+							<Route path="countries" element={<CountryList />} />
+							<Route path="form" element={<Form />} />
+						</Route>
+						<Route path="*" element={<PageNotFound />} />
+					</Routes>
+				</BrowserRouter>
+			</CitiesProvider>
+		</AuthProvider>
+	);
 }
 
 export default App;
