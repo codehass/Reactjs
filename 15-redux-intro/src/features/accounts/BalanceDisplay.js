@@ -1,12 +1,18 @@
+import { connect } from "mongoose";
+
 function formatCurrency(value) {
-  return new Intl.NumberFormat("en", {
-    style: "currency",
-    currency: "USD",
-  }).format(value);
+	return new Intl.NumberFormat("en", {
+		style: "currency",
+		currency: "USD",
+	}).format(value);
 }
 
-function BalanceDisplay() {
-  return <div className="balance">{formatCurrency(123456)}</div>;
+function BalanceDisplay({ balance }) {
+	return <div className="balance">{formatCurrency(balance)}</div>;
 }
 
-export default BalanceDisplay;
+function mapStateToProps(state) {
+	return { balance: state.account.balance };
+}
+
+export default connect(mapStateToProps)(BalanceDisplay);
